@@ -4,7 +4,15 @@
   .row
     .col
       .multi-input-wrapper(v-bind:style="visible ? 'z-index: 2;' : ''")
-        el-input(type="number" v-model="content" :clearable="!static" placeholder="0.0" @input="handleInput" @change="inputChange" :readonly="readonly || static")
+        el-input(
+          type="number"
+          v-model="content"
+          :clearable="!static"
+          placeholder="0.0"
+          @input="handleInput"
+          @change="inputChange"
+          :readonly="readonly || static"
+        )
           template(slot="append")
             el-button(v-if="isTokenSelected" type="text" @click="toggle")
               .d-flex.align-items-center(v-if="token == 0")
